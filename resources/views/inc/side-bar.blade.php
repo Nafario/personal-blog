@@ -1,7 +1,7 @@
 <div class="profile-card px-8 text-center">
     <h1 class="side-bar-line relative">About Me</h1>
     <section class="profile-image my-5"
-        style="background-image: url({{ asset('imgs/bg-4.jpg') }});background-position: center center;background-size: cover;">
+        style="background-image: url({{ $user->avatar }});background-position: center center;background-size: cover;">
     </section>
 
     @guest

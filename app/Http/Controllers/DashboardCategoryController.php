@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Catch_;
 
 class DashboardCategoryController extends Controller
 {
@@ -23,6 +24,27 @@ class DashboardCategoryController extends Controller
         ]);
 
         $category->create($newCategory);
-        return redirect()->back()->with('msg', 'Successfully Created');
+        return redirect(route('admin-category'))->with('msg', 'Successfully Created');
+    }
+    public function edit($id){
+        $category = Category::findOrFail($id);
+        return view('dashboard.category.edit', compact('category'));
+    }
+    public function update($id){
+        // dd(request()->all());
+        $category = Category::findOrFail($id);
+        $value = request()->validate([
+            'name' => ['max:255', 'string']
+        ]);
+        
+        $category->update($value);
+        // dd($updateTag);
+        return redirect(route('admin-category'))->with('msg', 'Successfully Updated');
+    }
+    public function destroy($id){
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect(route('admin-category'))->with('delete', 'Successfully Deleted');
+
     }
 }

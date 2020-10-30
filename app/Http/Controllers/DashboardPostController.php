@@ -46,7 +46,39 @@ class DashboardPostController extends Controller
         ]);
         // dd($post);
         $post->tags()->attach(request('tags'));
-        return redirect()->back()->with('msg', 'Successfully Uploaded');
+        return redirect(route('admin-posts'))->with('msg', 'Successfully Uploaded');
+
+    }
+    public function edit($id){
+        $post = Post::findOrFail($id);
+        $categories = Category::latest()->get();
+        $tags = Tag::latest()->get();
+        // dd($post->tags);
+        return view('dashboard.posts.edit', compact('post','categories','tags'));
+    }
+    public function update(Post $post, $id){
+        $post = Post::findOrFail($id);
+        $newPost = request()->validate([
+            'title' => [ 'max:255'],
+            'body' => ['max:2000'],
+            'thumbnail' => ['image', 'file'],
+            'category_id' => [ 'max:255', 'alpha_dash'],
+            // 'tags' => ['']
+        ]);
+        if (request()->hasFile('thumbnail')) {
+            $thumbnail = request()->file('thumbnail')->getClientOriginalName();
+            $newPost['thumbnail'] = request()->file('thumbnail')->storeAs('thumbnails', $thumbnail, 'public');
+            $post->update($newPost);
+        }
+        $post->update($newPost);
+        // dd($post);
+        $post->tags()->sync(request('tags'));
+        return redirect(route('admin-posts'))->with('msg', 'Successfully Uploaded');
+    }
+    public function destroy($id){
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect(route('admin-posts'))->with('delete', 'Successfully Deleted');
 
     }
 }
