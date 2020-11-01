@@ -12,7 +12,7 @@ class DashboardPostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->paginate(10);
         $categories = Category::latest()->get();
         $tags = Tag::latest()->get();
         // dd($category->name);

@@ -1,4 +1,4 @@
-<section class="new-post flex justify-center items-center flex-col">
+<section class="new-post flex justify-center items-center flex-col px-4 md:px-0">
     @foreach ($tags->posts as $tagPost)
     <h1 class="tracking-wider text-4xl my-4">
         {{ $tagPost->title }}

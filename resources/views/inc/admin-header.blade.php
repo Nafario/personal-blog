@@ -1,7 +1,7 @@
 <header class="flex justify-between items-center h-12 px-12 mb-2">
     {{-- Logo --}}
 
-    <div class="logo text-4xl font-bold">Gamer Tag</div>
+    <div class="logo text-4xl font-bold"><a href="/"> Gamer Tag</a></div>
     {{-- navigation link --}}
     <nav class="nav-links text-base tracking-widest">
         <ul class="flex">

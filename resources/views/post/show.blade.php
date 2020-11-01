@@ -22,21 +22,27 @@
     <x-app>
         <main class="container mx-auto grid grid-cols-1 md:grid-cols-5 col-gap-10 mt-10">
             <div class="md:col-span-3">
-                <div class="information flex justify-between items-center border-t border-b py-4">
-                    <section>
+                <div class="information flex justify-between items-center border-t border-b py-4 px-4 md:px-0">
+                    <section class="">
                         <small class="text-xs text-gray-600"><i>Written By</i> </small>
-                        <p>
-                            {{ $user->name }}
-                        </p>
+                        <div class=" flex justify-start items-center">
+                            <section class=" rounded-full"
+                                style="background-image: url({{ $user->avatar }}); width:50px; height:50px; background-position: center center;">
+
+                            </section>
+                            <p class="ml-2">
+                                {{ $user->name }}
+                            </p>
+                        </div>
                     </section>
-                    <section class="text-xl">
+                    <section class="text-xl md:sm">
                         @include('inc.social-link')
                     </section>
                 </div>
-                <p>
+                <p class=" px-4 md:px-0">
                     {{ $singlePost->body }}
                 </p>
-                <div class="flex mt-6 items-center">
+                <div class="flex mt-6 items-center px-4 md:px-0">
                     <p class=" font-bold mr-2">Tags :</p>
                     @foreach ($singlePost->tags as $tag)
                     <a href="{{ route('single-tag', $tag->id) }}"

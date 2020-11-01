@@ -1,18 +1,4 @@
 document.addEventListener('turbolinks:load', function() {
-	// const left = document.querySelector('.left');
-	// const right = document.querySelector('.right');
-	// const slider = document.querySelector('.slider');
-	// let index = 0;
-	// left.addEventListener('click', function() {
-	// 	index === 0 ? (index = 2) : index--;
-	// 	slider.style.transform = 'translateX(' + index * -25 + '%)';
-	// });
-
-	// right.addEventListener('click', function() {
-	// 	index++;
-	// 	index === 3 ? (index = 0) : null;
-	// 	slider.style.transform = 'translateX(' + index * -25 + '%)';
-	// });
 	const carousel = document.querySelector('.carousel');
 	const slider = document.querySelector('.slider');
 	const next = document.querySelector('.next');

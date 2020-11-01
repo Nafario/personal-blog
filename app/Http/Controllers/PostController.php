@@ -14,7 +14,7 @@ class PostController extends Controller
         $posts = Post::latest()->paginate(10);
         $newPost = Post::latest()->paginate(4);
         $featuredPost = Post::take(2)->latest()->get();
-        $user = auth()->user();
+        $user = User::first();
         $categories = Category::latest()->get();
         // dd($userPost);
         return view('post.index', compact('posts','newPost','featuredPost','user','categories'));
@@ -22,10 +22,10 @@ class PostController extends Controller
     public function show($id){
         $singlePost = Post::findOrFail($id);
         $featuredPost = Post::take(2)->latest()->get();
-        $user = auth()->user();
+        $user = User::first();
         $categories = Category::latest()->get();
         $tags = Tag::latest()->get();
-        // dd($tags);
+        // dd($user);
         return view('post.show', compact('singlePost','featuredPost','user','categories','tags'));
     }
     

@@ -60,7 +60,8 @@
                             </span>
                         </td>
                         <td class="px-3 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                            <a href="" class="text-indigo-600 hover:text-indigo-900">View</a>
+                            <a href="{{ route('single-category', $cat->id) }}" target="_blank"
+                                class="text-indigo-600 hover:text-indigo-900">View</a>
                         </td>
                         <td class="px-2 py-2 whitespace-no-wrap text-right text-sm leading-5 font-medium">
                             <a href="{{ route('edit-category', $cat->id) }}"

@@ -6,12 +6,12 @@
 </div>
 @if (session('msg'))
 <div class="px-12">
-    <p class=" bg-green-300 text-sm text-gray-100 py-2 px-4 mb-4" id="session-msg>{{ session('msg') }}</p>
+    <p class=" bg-green-300 text-sm text-gray-100 py-2 px-4 mb-4" id="session-msg">{{ session('msg') }}</p>
 </div>
 @endif
 @if (session('delete'))
 <div class=" px-12">
-        <p class=" bg-red-600 text-sm text-gray-100 py-2 px-4 mb-4" id="session-delete">{{ session('delete') }}</p>
+    <p class=" bg-red-600 text-sm text-gray-100 py-2 px-4 mb-4" id="session-delete">{{ session('delete') }}</p>
 </div>
 @endif
 <div class="flex flex-col px-4 mb-6">
@@ -60,7 +60,8 @@
                             </span>
                         </td>
                         <td class="px-3 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                            <a href="" class="text-indigo-600 hover:text-indigo-900">View</a>
+                            <a href="{{ route('single-tag', $tag->id) }}" class="text-indigo-600 hover:text-indigo-900"
+                                target="_blank">View</a>
                         </td>
                         <td class="px-3 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
                             <a href="{{ route('edit-tag',$tag->id) }}"

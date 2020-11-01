@@ -84,7 +84,7 @@
                             </p>
                         </td>
                         <td class="px-3 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                            <a href="{{ route('single-post', $post->id) }}"
+                            <a href="{{ route('single-post', $post->id) }}" target="_blank"
                                 class="text-indigo-600 hover:text-indigo-900">View</a>
                         </td>
                         <td class="px-3 py-2 whitespace-no-wrap text-right text-sm leading-5 font-medium">
@@ -104,6 +104,9 @@
                 </tbody>
                 @endforeach
             </table>
+            <section class="my-6 text-sm">
+                {{ $posts->links() }}
+            </section>
         </div>
     </div>
     {{-- </div> --}}

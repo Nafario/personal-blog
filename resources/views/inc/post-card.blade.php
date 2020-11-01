@@ -1,4 +1,4 @@
-<div class=" grid grid-cols-2 col-gap-12 row-gap-12 mt-6">
+<div class="grid grid-cols-1 px-4 md:grid-cols-2 col-gap-12 row-gap-12 mt-6">
     @foreach ($posts as $post)
     <article class="border shadow-lg">
         <section class="article-image"

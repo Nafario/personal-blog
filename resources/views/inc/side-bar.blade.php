@@ -3,16 +3,7 @@
     <section class="profile-image my-5"
         style="background-image: url({{ $user->avatar }});background-position: center center;background-size: cover;">
     </section>
-
-    @guest
-    <small>Guest</small>
-    <p class="mb-4">Nafis Hasnat</p>
-    @endguest
-    @auth
-
     <p class="mb-4">{{ $user->name }}</p>
-    @endauth
-
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero culpa sequi , </p>
 </div>
 <div class="text-center mt-8">

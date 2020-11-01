@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function show($id){
-        $user = auth()->user();
+        $user = User::first();
         $featuredPost = Post::take(2)->latest()->get();
         $category = Category::findOrFail($id);
         $categoryPosts = Post::where('category_id', $id)->paginate(6);

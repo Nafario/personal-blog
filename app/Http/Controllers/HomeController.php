@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,7 @@ class HomeController extends Controller
         $featuredPost = Post::take(2)->latest()->get();
         $newPost = Post::take(1)->latest()->get();
         $posts = Post::latest()->paginate(8);
-        $user = auth()->user();
+        $user = User::find(1);
         $categories = Category::latest()->get();
         // $tags = Tag::latest()->get();
         return view('home.index', compact('posts', 'newPost' ,'featuredPost', 'exclusivePost', 'user','categories'));

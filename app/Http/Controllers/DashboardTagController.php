@@ -44,7 +44,7 @@ class DashboardTagController extends Controller
     public function destroy($id){
         $tag = Tag::findOrFail($id);
         $tag->delete();
-        return redirect(route('admin-category'))->with('delete', 'Successfully Deleted');
+        return redirect(route('admin-tag'))->with('delete', 'Successfully Deleted');
 
     }
 }
