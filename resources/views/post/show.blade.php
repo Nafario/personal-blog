@@ -6,7 +6,7 @@
         <div style="height: 450px;" class="absolute w-full bg-black opacity-50 z-20" id="overlay-bg">
         </div>
         <section
-            style="background-image: url({{ $singlePost->thumbnail }});background-position: center center;background-size: cover; height:450px;"
+            style="background-image: url({{ asset('storage/' . $singlePost->thumbnail ) }});background-position: center center;background-size: cover; height:450px;"
             class="absolute w-full z-0">
         </section>
         <div class="flex justify-center items-center flex-col" style="height: 450px">

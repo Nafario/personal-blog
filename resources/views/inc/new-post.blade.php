@@ -8,7 +8,7 @@
         {{ $item->created_at->format('F j, Y') }}
     </p>
     <section class="new-post-image my-5"
-        style="background-image: url({{ $item->thumbnail }});background-position: center center;background-size: cover;">
+        style="background-image: url({{ asset('storage/' . $item->thumbnail ) }});background-position: center center;background-size: cover;">
     </section>
     <p class="tracking-wider leading-8 text-base">{{ Str::limit($item->body, 220) }}</p>
     <a href="{{ route('single-post', $item->id) }}"

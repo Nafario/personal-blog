@@ -10,10 +10,10 @@ class Post extends Model
     use HasFactory;
     protected $guarded = [];
     
-    public function getThumbnailAttribute($value)
-    {
-       return asset('storage/'. $value);
-    }
+    // public function getThumbnailAttribute($value)
+    // {
+    //    return asset('storage/'. $value);
+    // }
     public function user(){
         return $this->belongsTo(User::class);
     }

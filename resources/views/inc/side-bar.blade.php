@@ -1,7 +1,7 @@
 <div class="profile-card px-8 text-center">
     <h1 class="side-bar-line relative">About Me</h1>
     <section class="profile-image my-5"
-        style="background-image: url({{ asset('imgs/profile.jpg') }});background-position: center center;background-size: cover;">
+        style="background-image: url({{ asset('storage/' . $user->avatar ) }});background-position: center center;background-size: cover;">
     </section>
     <p class="mb-4">{{ $user->name ?? '' }}</p>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero culpa sequi , </p>
@@ -16,7 +16,7 @@
     <h1 class="side-bar-line relative">Featured Article</h1>
     @foreach ($featuredPost as $fPost)
     <section class="featured-post-image my-5"
-        style="background-image: url({{ $fPost->thumbnail }});background-position: center center;background-size: cover;">
+        style="background-image: url({{ asset('storage/' . $fPost->thumbnail )}});background-position: center center;background-size: cover;">
     </section>
     <a href="{{ route('single-post', $fPost->id) }}" class=" my-4">
         {{ $fPost->title }}

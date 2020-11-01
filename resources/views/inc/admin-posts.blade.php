@@ -50,7 +50,7 @@
                         <td class="px-3 py-4 whitespace-no-wrap">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 h-10 w-10">
-                                    <img class="h-10 w-10 rounded-full" src="{{ $post->thumbnail }}" alt="Thumbnail">
+                                    <img class="h-10 w-10 rounded-full" src="{{ asset('storage/' . $post->thumbnail ) }}" alt="Thumbnail">
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-xs leading-5 font-medium text-gray-900">
