@@ -25,12 +25,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Auth::routes([
-    'register' => false
-]);
-Route::get('/register', function () {
-    return redirect('/');
-});
+Auth::routes();
+// Route::get('/register', function () {
+//     return redirect('/');
+// });
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function(){
         return redirect(route('dashboard', auth()->user()->username));
