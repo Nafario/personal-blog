@@ -6,7 +6,7 @@
         <main style="width: 600px;" class="mx-auto mt-12 text-lg text-gray-600">
             <div class="avatar">
                 <section class="mb-4"
-                    style="background-image: url({{ $user->avatar }}); background-position: center center; width:200px; height:200px;">
+                    style="background-image: url({{ asset('storage/' . $user->avatar ) }}); background-position: center center; width:200px; height:200px;">
                 </section>
             </div>
             <p class=" py-2 border-b mb-3">

@@ -27,7 +27,7 @@
                         <small class="text-xs text-gray-600"><i>Written By</i> </small>
                         <div class=" flex justify-start items-center">
                             <section class=" rounded-full"
-                                style="background-image: url({{ $user->avatar }}); width:50px; height:50px; background-position: center center;">
+                                style="background-image: url({{ asset('storage/' . $user->avatar ) }}); width:50px; height:50px; background-position: center center;">
 
                             </section>
                             <p class="ml-2">

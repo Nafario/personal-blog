@@ -5,7 +5,7 @@
             <div class="profile col-span-1 bg-gray-900">
                 <section class="mb-8 flex flex-col justify-center items-center text-white">
                     <section class="mb-4 rounded-full mt-2"
-                        style="background-image: url({{ auth()->user()->avatar }}); background-position: center center; width:150px; height:150px;">
+                        style="background-image: url({{ asset('public/storage/' . auth()->user()->avatar ) }}); background-position: center center; width:150px; height:150px;">
                     </section>
                     <p class=" font-semibold">{{ auth()->user()->name }}</p>
                 </section>

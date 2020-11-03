@@ -9,7 +9,8 @@
     @if (Route::is('home'))
     <script src="{{ asset('js/main.js') }}" data-turbolinks-track="reload" defer></script>
     @endif
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/main.css') }}"> --}}
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Gaming Blog</title>
 </head>
