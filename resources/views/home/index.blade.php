@@ -17,6 +17,7 @@
                     </div>
                 </div>
                 <div class="side-bar md:col-span-1">
+
                     @include('inc.side-bar')
                 </div>
             </main>

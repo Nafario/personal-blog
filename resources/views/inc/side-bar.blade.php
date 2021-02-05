@@ -3,7 +3,7 @@
     <section class="profile-image my-5"
         style="background-image: url({{ asset('storage/' . $user->avatar ) }});background-position: center center;background-size: cover;">
     </section>
-    <p class="mb-4">{{ $user->name ?? '' }}</p>
+    <p class="mb-4">{{ $user->name }}</p>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero culpa sequi , </p>
 </div>
 <div class="text-center mt-8">

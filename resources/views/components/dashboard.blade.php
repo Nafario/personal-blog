@@ -1,5 +1,4 @@
 <x-home>
-    @include('inc.admin-header')
     <main class="">
         <div class="grid grid-cols-6 h-screen">
             <div class="profile col-span-1 bg-gray-900">

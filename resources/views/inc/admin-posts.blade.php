@@ -1,4 +1,4 @@
-<div class="px-6 text-right flex justify-between mb-4 ">
+<div class="px-6 text-right flex justify-between my-4 ">
     <h1 class=" font-semibold text-3xl">Posts</h1>
     <a href="{{ route('create-post') }}"
         class="text-indigo-600 text-base border border-indigo-600 px-6 py-2 hover:opacity-75">Create
@@ -50,7 +50,8 @@
                         <td class="px-3 py-4 whitespace-no-wrap">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 h-10 w-10">
-                                    <img class="h-10 w-10 rounded-full" src="{{ asset('storage/' . $post->thumbnail ) }}" alt="Thumbnail">
+                                    <img class="h-10 w-10 rounded-full"
+                                        src="{{ asset('storage/' . $post->thumbnail ) }}" alt="Thumbnail">
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-xs leading-5 font-medium text-gray-900">
