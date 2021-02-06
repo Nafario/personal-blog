@@ -2,7 +2,7 @@
     <div class="carousel h-screen">
         <div class="slider text-center text-white">
             @foreach ($exclusivePost as $exPost)
-            <section style="background-image: url({{ asset('storage/' . $exPost->thumbnail ) }});background-position: center
+            <section style="background-image: url({{ $exPost->thumbnail  }});background-position: center
         center;background-size: cover;">
                 <a href="{{ route('single-post', $exPost->id) }}" class="flex flex-col">
                     <h1 class="text-xl md:text-3xl px-32">
