@@ -2,7 +2,7 @@
     @foreach ($posts as $post)
     <article class="border shadow-lg">
         <section class="article-image"
-            style="background-image: url({{ asset('storage/' . $post->thumbnail ) }});background-position: center center;background-size: cover;">
+            style="background-image: url({{ $post->thumbnail }});background-position: center center;background-size: cover;">
         </section>
         <div class="px-6 py-4 flex flex-col justify-center" style="height: 240px">
             <a href="{{ route('single-post', $post->id) }}"

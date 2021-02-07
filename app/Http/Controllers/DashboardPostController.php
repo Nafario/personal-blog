@@ -35,15 +35,19 @@ class DashboardPostController extends Controller
             'title' => ['required', 'max:255'],
             'body' => ['required', 'max:2000'],
             'thumbnail' => ['required', 'image', 'file'],
+            'thumbnail_id' => ['nullable', 'string'],
             'category_id' => ['required', 'max:255', 'alpha_dash'],
             'tags' => ['required'],
         ]);
         if (request()->hasFile('thumbnail')) {
-            $thumbnail = Cloudinary::upload(
+            $uploadedFile = Cloudinary::upload(
                 request()
                     ->file('thumbnail')
                     ->getRealPath()
-            )->getSecurePath();
+            );
+            $thumbnail = $uploadedFile->getSecurePath();
+            $thumbnail_public_id = $uploadedFile->getPublicId();
+            // dd($thumbnail->getPublicId());
             // dd($uploadedFileUrl);
             // $thumbnail = request()
             //     ->file('thumbnail')
@@ -58,6 +62,7 @@ class DashboardPostController extends Controller
             'title' => $newPost['title'],
             'body' => $newPost['body'],
             'thumbnail' => $thumbnail,
+            'thumbnail_id' => $thumbnail_public_id,
             'category_id' => $newPost['category_id'],
         ]);
         // dd($post);
@@ -85,6 +90,7 @@ class DashboardPostController extends Controller
             'title' => ['max:255'],
             'body' => ['max:2000'],
             'thumbnail' => ['image', 'file'],
+            'thumbnail_id' => ['nullable', 'string'],
             'category_id' => ['max:255', 'alpha_dash'],
             // 'tags' => ['']
         ]);
@@ -108,6 +114,7 @@ class DashboardPostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+        Cloudinary::destroy($post->thumbnail_id);
         $post->delete();
         return redirect(route('admin-posts'))->with(
             'delete',

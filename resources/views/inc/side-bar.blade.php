@@ -16,7 +16,7 @@
     <h1 class="side-bar-line relative">Featured Article</h1>
     @foreach ($featuredPost as $fPost)
     <section class="featured-post-image my-5"
-        style="background-image: url({{ asset('storage/' . $fPost->thumbnail )}});background-position: center center;background-size: cover;">
+        style="background-image: url({{ $fPost->thumbnail }});background-position: center center;background-size: cover;">
     </section>
     <a href="{{ route('single-post', $fPost->id) }}" class=" my-4">
         {{ $fPost->title }}
